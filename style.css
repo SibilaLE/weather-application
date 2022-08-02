@@ -1,0 +1,104 @@
+body {
+  background: white;
+  font-family: "Amaranth", sans-serif;
+}
+.page {
+  margin: 5% 25%;
+  background: linear-gradient(
+    181.2deg,
+    rgb(181, 239, 249) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  );
+  border: 0.5px solid lightblue;
+  border-radius: 3%;
+  padding: 28px;
+  box-shadow: 12px 0px 18px rgb(214, 210, 210);
+}
+
+.search-city {
+  margin-top: 20px;
+  height: 43px;
+  width: 340px;
+  border: 3px solid lightblue;
+  border-radius: 4%;
+}
+.submit_ {
+  height: 43px;
+  width: 60px;
+  border-radius: 15%;
+  border: 3px solid lightblue;
+}
+.Search {
+  text-align: center;
+  color: black;
+}
+.current {
+  height: 43px;
+  width: 60px;
+  border-radius: 15%;
+  border: 3px solid lightblue;
+}
+.current:hover {
+  background: lightblue;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+.submit_:hover {
+  background: lightblue;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+h1 {
+  color: #007cb9;
+  text-align: center;
+  padding: 28px;
+  padding-bottom: 11px;
+  font-size: 45px;
+}
+h2 {
+  font-size: 75px;
+  color: #007cb9;
+  padding-left: 60px;
+}
+.celcius {
+  font-size: 30px;
+  color: grey;
+  padding: 10px;
+}
+.pic {
+  font-size: 90px;
+  color: rgb(241, 135, 65);
+  padding-left: 30px;
+  margin-top: -20px;
+}
+li {
+  position: relative;
+  left: 100px;
+  list-style: none;
+  margin-left: -30px;
+}
+p {
+  font-size: 26px;
+  color: rgb(105, 96, 96);
+  padding-top: 10px;
+}
+strong {
+  font-size: 18px;
+  color: #007cb9;
+}
+.temperature {
+  padding: 15px;
+}
+.weather {
+  font-size: 45px;
+  padding-bottom: 24px;
+  color: rgb(105, 96, 96);
+}
+.high {
+  font-size: 25px;
+}
+.low {
+  font-size: 17px;
+  color: grey;
+}

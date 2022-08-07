@@ -3,7 +3,8 @@ body {
   font-family: "Amaranth", sans-serif;
 }
 .page {
-  margin: 5% 25%;
+  margin: 25px auto;
+  max-width: 590px;
   background: linear-gradient(
     181.2deg,
     rgb(181, 239, 249) 10.5%,
@@ -11,7 +12,7 @@ body {
   );
   border: 0.5px solid lightblue;
   border-radius: 3%;
-  padding: 28px;
+  padding: 26px;
   box-shadow: 12px 0px 18px rgb(214, 210, 210);
 }
 
@@ -57,9 +58,9 @@ h1 {
   font-size: 45px;
 }
 h2 {
-  font-size: 75px;
+  font-size: 70px;
   color: #007cb9;
-  padding-left: 60px;
+  padding-left: 50px;
 }
 .celcius {
   font-size: 30px;
@@ -74,9 +75,9 @@ h2 {
 }
 li {
   position: relative;
-  left: 100px;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  margin-left: -30px;
 }
 p {
   font-size: 26px;

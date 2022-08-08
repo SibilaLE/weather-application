@@ -1,37 +1,4 @@
 //import axios from "axios";
-let current = new Date();
-let currentDate = document.querySelector("#current-date");
-let currentTime = document.querySelector("#current-time");
-let date = current.getDate();
-let hours = current.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = current.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[current.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Ap",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Set",
-  "Oct",
-  "Now",
-  "Dic",
-];
-
-let month = months[current.getMonth()];
-
-currentDate.innerHTML = `${day} ${month} ${date} , Today`;
-currentTime.innerHTML = `Local Time ${hours} : ${minutes}`;
 
 function search(city) {
   let apiKey = "f21167f56335ae8011dcc6a6fa773597";
@@ -76,6 +43,52 @@ formSearch.addEventListener("submit", SearchCelcius);
 
 let apiKey = "f21167f56335ae8011dcc6a6fa773597";
 
+function formatTime(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `Local Time ${hours}:${minutes}`;
+}
+function formatCity(timestamp) {
+  let date = new Date(timestamp);
+  let dateC = date.getDate();
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesdy",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Ap",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Set",
+    "Oct",
+    "Now",
+    "Dic",
+  ];
+
+  let month = months[date.getMonth()];
+  return `${day} ${month} ${dateC}, Today`;
+}
+
 function showtemperature(response) {
   let Temperature = Math.round(response.data.main.temp);
   let h2 = document.querySelector("#weatherTemp");
@@ -86,13 +99,21 @@ function showtemperature(response) {
   document.getElementById("humidity").innerHTML = response.data.main.humidity;
   document.getElementById("feelsLike").innerHTML =
     response.data.main.feels_like;
+
+  console.log(JSON.stringify(response.data));
+  console.log(response.data.main.humidity);
   document.getElementById("wind_").innerHTML = response.data.wind.speed;
-  console.log(response.data);
   document.getElementById("headingCountry").innerHTML =
     response.data.sys.country;
-  console.log(response.data);
   document.getElementById("clouds_").innerHTML =
     response.data.weather[0].description;
+
+  document.getElementById("current-date").innerHTML = formatCity(
+    response.data.dt * 1000
+  );
+  document.getElementById("current-time").innerHTML = formatTime(
+    response.data.dt * 1000
+  );
 }
 // current location
 function currentPosition(position) {

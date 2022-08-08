@@ -57,6 +57,9 @@ h1 {
   padding-bottom: 11px;
   font-size: 45px;
 }
+.row {
+  text-transform: capitalize;
+}
 h2 {
   font-size: 70px;
   color: #007cb9;

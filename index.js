@@ -99,6 +99,8 @@ function showtemperature(response) {
   document.getElementById("humidity").innerHTML = response.data.main.humidity;
   document.getElementById("feelsLike").innerHTML =
     response.data.main.feels_like;
+
+  alert(JSON.stringify(response.data));
   document.getElementById("wind_").innerHTML = response.data.wind.speed;
   document.getElementById("headingCountry").innerHTML =
     response.data.sys.country;
@@ -109,6 +111,11 @@ function showtemperature(response) {
   );
   document.getElementById("current-time").innerHTML = formatTime(
     response.data.dt * 1000
+  );
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 // current location

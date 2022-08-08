@@ -99,15 +99,11 @@ function showtemperature(response) {
   document.getElementById("humidity").innerHTML = response.data.main.humidity;
   document.getElementById("feelsLike").innerHTML =
     response.data.main.feels_like;
-
-  console.log(JSON.stringify(response.data));
-  console.log(response.data.main.humidity);
   document.getElementById("wind_").innerHTML = response.data.wind.speed;
   document.getElementById("headingCountry").innerHTML =
     response.data.sys.country;
   document.getElementById("clouds_").innerHTML =
     response.data.weather[0].description;
-
   document.getElementById("current-date").innerHTML = formatCity(
     response.data.dt * 1000
   );
